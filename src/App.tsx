@@ -1,14 +1,17 @@
 
 import './App.css';
 import React, { useState } from 'react';
-import Header from './components/Header';
-import CharacterContainer from './components/CharacterContainer';
-import Navigation from './components/Navigation';
+import Header from './components/header';
+import CharacterContainer from './components/character_container';
+import Navigation from './components/navigation';
+import { DisneyCharacter } from './disney_character';
 
-function App() {
+const App : React.FC = () => {
+
+	const [currentPage, setCurrentPage] = useState<number>(1);
 
   // Some dummy state representing disney characters
-  const [characters, setCharacters] = useState([
+  const [characters, setCharacters] = useState<Array<DisneyCharacter>>([
     {
       _id: 6,
       name: "'Olu Mel",
@@ -26,7 +29,7 @@ function App() {
     },
   ]);
 
-  const [currentPage, setCurrentPage] = useState(1);
+  
 
   return (
     <div className="page">
