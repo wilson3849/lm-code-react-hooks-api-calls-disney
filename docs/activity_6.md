@@ -7,7 +7,7 @@
 🦸‍♂️ Your challenge is to implement the user story below
 
 ```
-As a user I want to be able to toggle between seeing my favourite disney characters and the entire list.
+As a user I want to be able to toggle between seeing my favourite Disney characters and the entire list.
 ```
 
 #### Acceptance criteria
