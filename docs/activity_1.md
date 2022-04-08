@@ -6,7 +6,7 @@ In the [App.tsx](../src/App.tsx) on lines 14 to 30 the code declares an array of
 
 In fact that is where you encounter your first React Hook [useState](https://reactjs.org/docs/hooks-state.html).
 
-We'll use the `useState` hook to persist our array of characters, which is currently [hard-coded](https://en.wikipedia.org/wiki/Hard_coding). As a result of our hard-coding, if Disney create a new film then the application wouldn't reflect the new character until you updated the hard-coded character array. Also if you later updated the hard code characters then it would mean you would have to re-deploy the application in order to see them on your application. 😱
+We'll use the `useState` hook to persist our array of characters, which is currently [hard-coded](https://en.wikipedia.org/wiki/Hard_coding). As a result of our hard-coding, if Disney create a new film then the application wouldn't reflect the new character until you updated the hard-coded character array. Also if you later updated the hard coded characters then it would mean you would have to re-deploy the application in order to see them on your application. 😱
 
 In short, hard-coding might be useful as a way of quickly developing a component, but in a real application we want to replace hard-coding with smarter data access.
 
