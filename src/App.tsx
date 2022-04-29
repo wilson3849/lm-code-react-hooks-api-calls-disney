@@ -9,30 +9,10 @@ import axios from 'axios';
 
 const App : React.FC = () => {
 
+  const [characterFavourites, setCharacterFavourites] = useState<Array<number>>([1]);
+
 	const [currentPage, setCurrentPage] = useState<number>(1);
-
   const [characters, setCharacters] = useState<Array<DisneyCharacter>>([]);
-
-  // Some dummy state representing disney characters
-  /*
-  const [characters, setCharacters] = useState<Array<DisneyCharacter>>([
-    {
-      _id: 6,
-      name: "'Olu Mel",
-      imageUrl: "https://static.wikia.nocookie.net/disney/images/6/61/Olu_main.png"
-    },
-    {
-      _id: 25,
-      name: "Abu",
-      imageUrl: "https://static.wikia.nocookie.net/disney/images/3/3f/Profile_-_Abu.png"
-    },
-    {
-      _id: 30,
-      name: "Ace",
-      imageUrl: "https://static.wikia.nocookie.net/disney/images/1/1e/Profile_-_Ace.png"
-    },
-  ]);
-  */
 
   useEffect(() => {
     getCharacters(currentPage);
@@ -41,12 +21,10 @@ const App : React.FC = () => {
   const getCharacters = async (pageNumber : number) => {
     axios.get(`https://api.disneyapi.dev/characters?page=${pageNumber}`)
     .then(function (response) {
-        // handle success
         setCharacters(response.data.data)
         console.table(characters)
     })
     .catch(function (error) {
-        // handle error
         console.log(error);
     });
   };
@@ -57,8 +35,9 @@ const App : React.FC = () => {
 
       <Header currentPage={currentPage} />
       <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      <CharacterContainer characters={characters} />
-
+      <CharacterContainer characters={characters}
+                          characterFavourites={characterFavourites} 
+                          updateFavourites={setCharacterFavourites}  />
     </div>
   );
 }
