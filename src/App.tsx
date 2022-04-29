@@ -35,8 +35,8 @@ const App : React.FC = () => {
   */
 
   useEffect(() => {
-    getCharacters(1);
-  }, []);  
+    getCharacters(currentPage);
+  }, [currentPage]);  
 
   const getCharacters = async (pageNumber : number) => {
     axios.get(`https://api.disneyapi.dev/characters?page=${pageNumber}`)
